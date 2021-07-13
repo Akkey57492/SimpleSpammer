@@ -14,6 +14,7 @@ print("""
 print("[1] Discord Spammer")
 print("[2] Youtube Live Spammer")
 print("[3] Minecraft Spammer(Java版推奨)")
+print("[4] LINE Spammer")
 select = input(">")
 
 if select == "1":
@@ -56,8 +57,21 @@ elif select == "3":
 		time.sleep(0.1)
 		pyautogui.write(f"{message}")
 		pyautogui.press("enter")
+elif select == "4":
+	print("LINE Spammerでは2秒間隔でメッセージが送信されます。")
+	message = input("スパムメッセージ: ")
+	print("スパムしたいユーザーチャンネルに入った状態にしてください。")
+	print("準備ができたらEnterキーを教えてください。")
+	input()
+	print("10秒以内にLINEのチャンネルを選択してください。")
+	print("自動的にスパムが開始されます。")
+	time.sleep(10)
+	while True:
+		pyautogui.write(f"{message}")
+		pyautogui.press("enter")
+		time.sleep(2)
 else:
-	print("「1」「2」「3」のどれかを選択してください。")
+	print("「1」「2」「3」「4」のどれかを選択してください。")
 	print("10秒後にプログラムが終了します。")
 	time.sleep(10)
 	exit()
